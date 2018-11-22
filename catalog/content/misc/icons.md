@@ -2,7 +2,7 @@
 ## H2
 ### H3
 
-> This is a pages of annoyances in body copy.
+This is a pages of annoyances in body copy.
 
 ### Ross
 
