@@ -28,10 +28,21 @@ const pages = [
     title: 'Miscellaneous', 
     pages: [
       {
-        path: '/misc',
-        title: 'Miscellaneous',
-        content: pageLoader(() => import('./content/misc/misc.md'))
+        path: '/misc/snippets',
+        title: 'Highlight Reel',
+        content: pageLoader(() => import('./content/misc/snippets.md'))
+      },
+      {
+        path: '/misc/reading',
+        title: 'Research Links',
+        content: pageLoader(() => import('./content/misc/reading.md'))
+      },
+      {
+        path: '/misc/icons',
+        title: 'Deprecated Icon copy',
+        content: pageLoader(() => import('./content/misc/icons.md'))
       }
+
     ]
   }
 ];
