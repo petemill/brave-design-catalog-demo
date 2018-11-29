@@ -1,12 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Catalog, pageLoader } from 'catalog';
+import BraveComponentSpecimen from './specimens/brave-ui-component'
+const { Button } = require('brave-ui')
 
 const pages = [
   {
     path: '/',
     title: 'Introduction',
     content: pageLoader(() => import('./content/welcome/index.md'))
+  },
+  {
+    title: 'Components',
+    pages: [
+      {
+        imports: { Button },
+        path: '/components/button',
+        title: 'Button',
+        content: pageLoader(() => import('./content/components/button/index.md'))
+      },
+    ]
   },
   {
     title: 'Miscellaneous', 
@@ -19,6 +32,10 @@ const pages = [
     ]
   }
 ];
+
+const customSpecimens = {
+  'brave-component': BraveComponentSpecimen
+}
 
 const theme = {
   // Typography
@@ -87,6 +104,7 @@ ReactDOM.render(
     useBrowserHistory={true}
     pages={pages}
     theme={theme}
+    specimens={customSpecimens}
   />,
   document.getElementById('catalog')
 );
