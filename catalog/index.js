@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Catalog, pageLoader } from 'catalog';
+import BraveComponentSpecimen from './specimens/brave-ui-component'
 import logo from "./static/welcome/logo.svg";
+const { Button } = require('brave-ui')
 
 const pages = [
   {
@@ -22,6 +24,17 @@ const pages = [
         title: 'December 2018',
         content: pageLoader(() => import('./content/log/dec2018.md'))
       }
+    ]
+  },
+  {
+    title: 'Components',
+    pages: [
+      {
+        imports: { Button },
+        path: '/components/button',
+        title: 'Button',
+        content: pageLoader(() => import('./content/components/button/index.md'))
+      },
     ]
   },
   {
@@ -46,6 +59,10 @@ const pages = [
     ]
   }
 ];
+
+const customSpecimens = {
+  'brave-component': BraveComponentSpecimen
+}
 
 const theme = {
   // Typography
@@ -110,6 +127,7 @@ ReactDOM.render(
     logoSrc={logo}
     pages={pages}
     theme={theme}
+    specimens={customSpecimens}
   />,
   document.getElementById('catalog')
 );

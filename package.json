@@ -9,5 +9,8 @@
   "scripts": {
     "catalog-start": "catalog start",
     "catalog-build": "catalog build"
+  },
+  "devDependencies": {
+    "brave-ui": "^0.34.2"
   }
 }
