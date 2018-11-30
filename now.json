@@ -1,4 +1,7 @@
 {
-  "type": "docker",
-  "name": "brave.design-catalog"
-}
+  "version": 2,
+  "name": "brave.design",
+  "builds": [
+    { "src": "package.json", "use": "@now/static-build", "config": { "distDir": "catalog/build" } }
+  ]
+ }
