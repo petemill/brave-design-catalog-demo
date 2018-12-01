@@ -12,18 +12,33 @@ const pages = [
     content: pageLoader(() => import('./content/welcome/index.md'))
   },
   {
-    title: 'Design System Log', 
+    title: 'Foundation',
     pages: [
       {
-        path: '/dsmlog/november2018',
-        title: 'November 2018',
-        content: pageLoader(() => import('./content/log/nov2018.md'))
-      }, 
+        title: 'Colors',
+        path: '/foundation/colors',
+        content: pageLoader(() => import('./content/components/button/index.md')),
+      },
       {
-        path: '/dsmlog/december2018',
-        title: 'December 2018',
-        content: pageLoader(() => import('./content/log/dec2018.md'))
-      }
+        title: 'Typography',
+        path: '/foundation/typography',
+        content: pageLoader(() => import('./content/components/button/index.md')),
+      },
+      {
+        title: 'Layout & Spacing',
+        path: '/foundation/layout-spacing',
+        content: pageLoader(() => import('./content/components/button/index.md')),
+      },
+      {
+        title: 'Writing Style',
+        path: '/foundation/writing-style',
+        content: pageLoader(() => import('./content/components/button/index.md')),
+      },
+      {
+        title: 'Iconography',
+        path: '/foundation/icongraphy',
+        content: pageLoader(() => import('./content/components/button/index.md')),
+      },
     ]
   },
   {
@@ -32,8 +47,18 @@ const pages = [
       {
         imports: { Button },
         path: '/components/button',
-        title: 'Button',
+        title: 'Buttons',
         content: pageLoader(() => import('./content/components/button/index.md'))
+      },
+      {
+        title: 'Icons',
+        path: '/components/icons',
+        content: pageLoader(() => import('./content/components/button/index.md')),
+      },
+      {
+        title: 'Toggles',
+        path: '/components/toggles',
+        content: pageLoader(() => import('./content/components/button/index.md')),
       },
     ]
   },
@@ -55,9 +80,24 @@ const pages = [
         title: 'Deprecated Icon copy',
         content: pageLoader(() => import('./content/misc/icons.md'))
       }
-
+      
     ]
-  }
+  },
+  {
+    title: 'Design System Log', 
+    pages: [
+      {
+        path: '/dsmlog/november2018',
+        title: 'November 2018',
+        content: pageLoader(() => import('./content/log/nov2018.md'))
+      }, 
+      {
+        path: '/dsmlog/december2018',
+        title: 'December 2018',
+        content: pageLoader(() => import('./content/log/dec2018.md'))
+      }
+    ]
+  },
 ];
 
 const customSpecimens = {
