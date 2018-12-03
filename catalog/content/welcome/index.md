@@ -1,1 +1,0 @@
-This is a sandbox for starting to write, collect, collate and record content for what will mature to become the foundation for the future Brave Design System site. Lots of sections inside this website live here now for easy reference but will be deleted and almost everything is a work in progress that is still being work tested.

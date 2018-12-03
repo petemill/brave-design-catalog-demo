@@ -2,42 +2,58 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Catalog, pageLoader } from 'catalog';
 import BraveComponentSpecimen from './specimens/brave-ui-component'
-import logo from "./static/welcome/logo.svg";
+import logo from "./static/introduction/logo.svg";
 const { Button } = require('brave-ui')
 
 const pages = [
   {
     path: '/',
     title: 'Introduction',
-    content: pageLoader(() => import('./content/welcome/index.md'))
+    content: pageLoader(() => import('./content/introduction/index.md'))
+  },
+  {
+    path: '/',
+    title: 'Brand & Logo',
+    pages: [
+      {
+        title: 'Logo',
+        path: '/brand/logo',
+        content: pageLoader(() => import('./content/brand/logo/index.md')),
+      },
+      {
+        title: 'Brand Guidelines',
+        path: '/brand/guidelines',
+        content: pageLoader(() => import('./content/brand/guidelines/index.md')),
+      },
+      {
+        title: 'Voice & Tone',
+        path: '/brand/voice',
+        content: pageLoader(() => import('./content/brand/voice/index.md')),
+      },
+    ]
   },
   {
     title: 'Foundation',
     pages: [
       {
-        title: 'Colors',
-        path: '/foundation/colors',
-        content: pageLoader(() => import('./content/components/button/index.md')),
+        title: 'Color System',
+        path: '/foundation/color',
+        content: pageLoader(() => import('./content/foundation/color/index.md')),
       },
       {
         title: 'Typography',
         path: '/foundation/typography',
-        content: pageLoader(() => import('./content/components/button/index.md')),
+        content: pageLoader(() => import('./content/foundation/typography/index.md')),
       },
       {
         title: 'Layout & Spacing',
-        path: '/foundation/layout-spacing',
-        content: pageLoader(() => import('./content/components/button/index.md')),
-      },
-      {
-        title: 'Writing Style',
-        path: '/foundation/writing-style',
-        content: pageLoader(() => import('./content/components/button/index.md')),
+        path: '/foundation/layout',
+        content: pageLoader(() => import('./content/foundation/layout/index.md')),
       },
       {
         title: 'Iconography',
-        path: '/foundation/icongraphy',
-        content: pageLoader(() => import('./content/components/button/index.md')),
+        path: '/foundation/iconography',
+        content: pageLoader(() => import('./content/foundation/iconography/index.md')),
       },
     ]
   },
@@ -53,49 +69,59 @@ const pages = [
       {
         title: 'Icons',
         path: '/components/icons',
-        content: pageLoader(() => import('./content/components/button/index.md')),
+        content: pageLoader(() => import('./content/components/icons/index.md')),
       },
       {
-        title: 'Toggles',
-        path: '/components/toggles',
-        content: pageLoader(() => import('./content/components/button/index.md')),
+        title: 'Toggle',
+        path: '/components/toggle',
+        content: pageLoader(() => import('./content/components/toggle/index.md')),
       },
     ]
   },
   {
-    title: 'Miscellaneous', 
+    path: '/',
+    title: 'Resources',
     pages: [
       {
-        path: '/misc/snippets',
-        title: 'Highlight Reel',
-        content: pageLoader(() => import('./content/misc/snippets.md'))
+        title: 'Logo',
+        path: '/resources/logo',
+        content: pageLoader(() => import('./content/resources/logo.md')),
       },
       {
-        path: '/misc/reading',
+        title: 'Fonts',
+        path: '/resources/fonts',
+        content: pageLoader(() => import('./content/resources/fonts.md')),
+      },
+      {
+        title: 'Icons',
+        path: '/resources/icons',
+        content: pageLoader(() => import('./content/resources/icons.md')),
+      },
+      {
+        title: 'Graphics',
+        path: '/resources/graphics',
+        content: pageLoader(() => import('./content/resources/graphics.md')),
+      },
+    ]
+  },
+  {
+    title: 'Other', 
+    pages: [
+      {
+        path: '/other/snippets',
+        title: 'Progress Logs',
+        content: pageLoader(() => import('./content/other/progress.md'))
+      },
+      {
+        path: '/other/reading',
         title: 'Research Links',
-        content: pageLoader(() => import('./content/misc/reading.md'))
+        content: pageLoader(() => import('./content/other/reading.md'))
       },
       {
-        path: '/misc/icons',
+        path: '/other/icons',
         title: 'Deprecated Icon copy',
-        content: pageLoader(() => import('./content/misc/icons.md'))
-      }
-      
-    ]
-  },
-  {
-    title: 'Design System Log', 
-    pages: [
-      {
-        path: '/dsmlog/november2018',
-        title: 'November 2018',
-        content: pageLoader(() => import('./content/log/nov2018.md'))
-      }, 
-      {
-        path: '/dsmlog/december2018',
-        title: 'December 2018',
-        content: pageLoader(() => import('./content/log/dec2018.md'))
-      }
+        content: pageLoader(() => import('./content/other/icons.md'))
+      },
     ]
   },
 ];
@@ -104,11 +130,15 @@ const customSpecimens = {
   'brave-component': BraveComponentSpecimen
 }
 
+const color = {
+  whiteBase: '#FFF',
+}
+
 const theme = {
   // Typography
-  fontHeading: 'Poppins, Muli',
+  fontHeading: 'Muli',
   fontMono: 'Courier',
-  fontFamily: 'Muli, Poppins',
+  fontFamily: 'Muli',
   baseFontSize: '14px',
 
   // Colors
@@ -117,26 +147,22 @@ const theme = {
   codeColor: '#00263E',
   linkColor: '#Fb542b',
 
-  // NavigationBar background color, but also sometimes used as a foreground
-  // or border color.
+  // NavigationBar background color, but also sometimes used as a foreground or border color.
   lightColor: '#D6D6D6',
 
   // Used in PageHeader
-  pageHeadingBackground: 'linear-gradient(.25turn, #392DD1, #A91B78)',
-  pageHeadingTextColor: '#fff',
+  pageHeadingBackground: '#343546',
+  pageHeadingTextColor: color.whiteBase,
 
-  // Used in Menu and PageHeader to make sure the top parts have
-  // the same height.
-  pageHeadingHeight: 130,
+  // Used in Menu and PageHeader to make sure the top parts have the same height.
+  pageHeadingHeight: 200,
 
   // Used for navigation bar
   navBarBackground: 'linear-gradient(#e66465, #9198e5)',
   navBarTextColor: '#003B5C',
 
-  // Used in ResponsiveTabs (tab text), Download specimen (title text).
-  // Typography: headings.
+  // Used in ResponsiveTabs (tab text), Download specimen (title text). Typography: headings.
   brandColor: '#434351',
-
   sidebarColor: '#FFFFFF',
   sidebarColorText: '#262626',
   sidebarColorTextActive: '#Fb542b',
@@ -144,20 +170,20 @@ const theme = {
   sidebarColorHeading: '#003B5C',
 
   // Used in the html, react, and image specimens.
-  bgLight: '#F2F2F2',
+  bgLight: color.whiteBase,
   bgDark: '#333333',
 
   // Keys appear to be PrismJS token types.
   codeStyles: {
-    tag: { color: '#Fb542b' },
-    punctuation: { color: '#535353' },
-    script: { color: '#3F7397' },
-    function: { color: '#Fb542b' },
-    keyword: { color: '#3F7397' },
-    string: { color: '#00263E' }
+  tag: { color: '#Fb542b' },
+  punctuation: { color: '#535353' },
+  script: { color: '#3F7397' },
+  function: { color: '#Fb542b' },
+  keyword: { color: '#3F7397' },
+  string: { color: '#00263E' }
   },
 
-  msRatio: 1.3
+  msRatio: 1.4,
 } 
 
 ReactDOM.render(
