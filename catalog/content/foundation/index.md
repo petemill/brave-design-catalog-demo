@@ -1,0 +1,1 @@
+This is eventually where we will lay the general explanation for how the elements in our foundations category help set the rudimentary structure for how all our designs are built. Should include a link to each section.

@@ -36,6 +36,11 @@ const pages = [
     title: 'Foundation',
     pages: [
       {
+        title: 'Overview',
+        path: '/foundation',
+        content: pageLoader(() => import('./content/foundation/index.md')),
+      },
+      {
         title: 'Color System',
         path: '/foundation/color',
         content: pageLoader(() => import('./content/foundation/color/index.md')),
@@ -113,9 +118,9 @@ const pages = [
         content: pageLoader(() => import('./content/other/progress.md'))
       },
       {
-        path: '/other/reading',
-        title: 'Research Links',
-        content: pageLoader(() => import('./content/other/reading.md'))
+        path: '/other/annoyances',
+        title: 'Catalog Annoyances',
+        content: pageLoader(() => import('./content/other/annoyances.md'))
       },
       {
         path: '/other/icons',
