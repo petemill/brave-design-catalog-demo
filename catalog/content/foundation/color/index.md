@@ -142,13 +142,13 @@ colors:
 ```
 ```color-palette|span-2
 colors:
-   - {name: "silver-lighten-5", value: "#F3F3F6"}
-   - {name: "silver-base", value: "#E5E5EB"}
+   - {name: "silver-lighten-15", value: "#F3F3F6"}
+   - {name: "silver-lighten-10", value: "#E5E5EB"}
    - {name: "silver-darken-5", value: "#D7D7E0"}
-   - {name: "silver-darken-10", value: "#C8C8D5"}
-   - {name: "silver-darken-15", value: "#BABACA"}
-   - {name: "silver-darken-20", value: "#ABABBF"}
-   - {name: "silver-darken-25", value: "#9D9DB4"}
+   - {name: "silver-base", value: "#C8C8D5"}
+   - {name: "silver-darken-5", value: "#BABACA"}
+   - {name: "silver-darken-10", value: "#ABABBF"}
+   - {name: "silver-darken-15", value: "#9D9DB4"}
 ```
 ```color-palette|span-2
 colors:
