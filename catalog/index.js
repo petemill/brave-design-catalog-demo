@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { Catalog, pageLoader } from 'catalog';
 import BraveComponentSpecimen from './specimens/brave-ui-component'
 import logo from "./static/introduction/logo.svg";
+import css from "./style.css";
 const { Button } = require('brave-ui')
 
 const pages = [
@@ -13,8 +14,13 @@ const pages = [
   },
   {
     path: '/',
-    title: 'Brand & Logo',
+    title: 'Brand',
     pages: [
+      {
+        title: 'Overview',
+        path: '/brand/overview',
+        content: pageLoader(() => import('./content/brand/index.md')),
+      },
       {
         title: 'Logo',
         path: '/brand/logo',
@@ -160,7 +166,7 @@ const theme = {
   pageHeadingTextColor: color.whiteBase,
 
   // Used in Menu and PageHeader to make sure the top parts have the same height.
-  pageHeadingHeight: 200,
+  pageHeadingHeight: 180,
 
   // Used for navigation bar
   navBarBackground: 'linear-gradient(#e66465, #9198e5)',
@@ -196,6 +202,7 @@ ReactDOM.render(
     title='Brave Design System'
     useBrowserHistory={true}
     logoSrc={logo}
+    css={css}
     pages={pages}
     theme={theme}
     specimens={customSpecimens}
