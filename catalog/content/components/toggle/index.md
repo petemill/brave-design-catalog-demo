@@ -1,4 +1,5 @@
-```image
-src: /components/toggle/toggles.png
-plain: true
+This is a toggle component.
+
+```brave-component
+<Toggle />
 ```

@@ -1,1 +1,0 @@
-View the progress logs [for the Design System here.](https://drive.google.com/drive/folders/1i_OJ6x44h5NOqkkc0wcwUHQOUyI-Dbfk?ths=true)

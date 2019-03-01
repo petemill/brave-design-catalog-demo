@@ -1,20 +1,11 @@
-/* all this styling doesn't feel like an even remotely correct solve but i'm doing it anyway in the interim. */
 .catalog-uucqty-Menu-Menu {
   background-position: 50% !important;
 }
 
-.catalog-1q9mm4x-PageHeader-PageHeader {
-  display: none;
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600 !important;
 }
 
-.catalog-14vdwle-Menu-Menu {
-  display: none;
-}
-
-.catalog-18hbipf-NavigationBar-NavigationBar {
-  display: none;
-}
-
-.catalog-4g86b3-Page-Page {
-  padding: 70px 0 !important;
+code {
+  font-size: 14px;
 }

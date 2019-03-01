@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Specimen, ReactSpecimen } from 'catalog'
+import { ReactSpecimen } from 'catalog'
 import { ThemeProvider } from 'brave-ui/theme'
 import Theme from 'brave-ui/theme/brave-default'
 

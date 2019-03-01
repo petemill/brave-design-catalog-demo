@@ -1,8 +1,8 @@
 {
-  "name": "brave.design",
+  "name": "design.brave",
   "description": "",
   "dependencies": {
-    "catalog": "^3.0.0-rc.4",
+    "catalog": "^3.6.0",
     "react": "^16.6.1",
     "react-dom": "^16.6.1"
   },
@@ -12,6 +12,6 @@
     "now-build": "catalog build"
   },
   "devDependencies": {
-    "brave-ui": "^0.34.2"
+    "brave-ui": "^0.37.0"
   }
 }

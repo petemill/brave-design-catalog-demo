@@ -4,7 +4,7 @@ import { Catalog, pageLoader } from 'catalog';
 import BraveComponentSpecimen from './specimens/brave-ui-component'
 import logo from "./static/introduction/logo.svg";
 import css from "./style.css";
-const { Button } = require('brave-ui')
+const { Button, Toggle } = require('brave-ui')
 
 const pages = [
   {
@@ -72,9 +72,9 @@ const pages = [
     title: 'Components',
     pages: [
       {
+        title: 'Buttons',
         imports: { Button },
         path: '/components/button',
-        title: 'Buttons',
         content: pageLoader(() => import('./content/components/button/index.md'))
       },
       {
@@ -84,6 +84,7 @@ const pages = [
       },
       {
         title: 'Toggle',
+        imports: { Toggle },
         path: '/components/toggle',
         content: pageLoader(() => import('./content/components/toggle/index.md')),
       },
@@ -119,41 +120,27 @@ const pages = [
     title: 'Other', 
     pages: [
       {
-        path: '/other/snippets',
-        title: 'Progress Logs',
-        content: pageLoader(() => import('./content/other/progress.md'))
-      },
-      {
-        path: '/other/annoyances',
-        title: 'Catalog Annoyances',
-        content: pageLoader(() => import('./content/other/annoyances.md'))
-      },
-      {
         path: '/other/icons',
         title: 'Deprecated Icon copy',
         content: pageLoader(() => import('./content/other/icons.md'))
-      },
+      }
     ]
-  },
+  }
 ];
 
 const customSpecimens = {
   'brave-component': BraveComponentSpecimen
 }
 
-const color = {
-  whiteBase: '#FFF',
-}
-
 const theme = {
   // Typography
   fontHeading: 'Muli',
-  fontMono: 'Courier',
+  fontMono: 'SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace',
   fontFamily: 'Muli',
   baseFontSize: '14px',
 
   // Colors
-  background: '#F5F5F5',
+  background: '#FFF',
   textColor: '#434351',
   codeColor: '#00263E',
   linkColor: '#Fb542b',
@@ -163,10 +150,10 @@ const theme = {
 
   // Used in PageHeader
   pageHeadingBackground: '#343546',
-  pageHeadingTextColor: color.whiteBase,
+  pageHeadingTextColor: '#FFF',
 
   // Used in Menu and PageHeader to make sure the top parts have the same height.
-  pageHeadingHeight: 180,
+  pageHeadingHeight: 160,
 
   // Used for navigation bar
   navBarBackground: 'linear-gradient(#e66465, #9198e5)',
@@ -181,20 +168,21 @@ const theme = {
   sidebarColorHeading: '#003B5C',
 
   // Used in the html, react, and image specimens.
-  bgLight: color.whiteBase,
+  bgLight: '#FFF',
   bgDark: '#333333',
 
   // Keys appear to be PrismJS token types.
   codeStyles: {
-  tag: { color: '#Fb542b' },
-  punctuation: { color: '#535353' },
-  script: { color: '#3F7397' },
-  function: { color: '#Fb542b' },
+  tag: { color: '#535353' },
+  punctuation: { color: '#9e9e9e' },
+  script: { color: '#535353' },
+  function: { color: '#535353' },
   keyword: { color: '#3F7397' },
-  string: { color: '#00263E' }
+  string: { color: '#535353' }
   },
 
   msRatio: 1.4,
+  checkerboardPatternLight: 'transparent',
 } 
 
 ReactDOM.render(
